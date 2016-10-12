@@ -1,0 +1,22 @@
+{
+  "name": "CodeAgenda",
+  "description": "Agenda Telefonica",
+  "main": "",
+  "authors": [
+    "bmarsilio <bruno.marsilio@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bmarsilio/curso-lumen",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}
