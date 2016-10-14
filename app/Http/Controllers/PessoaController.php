@@ -35,6 +35,36 @@ class PessoaController extends Controller
         return redirect()->route('agenda.letra', ['letra' => $letra]);
     }
 
+    public function edit($id)
+    {
+        $pessoa = Pessoa::find($id);
+
+        return view('pessoa.edit', compact('pessoa'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $pessoa = Pessoa::find($id);
+
+        $validator = Validator::make($request->all(), [
+            'nome' => 'required|min:3|max:255|unique:pessoa,nome,'.$pessoa->id,
+            'apelido' => 'required|min:2|max:50',
+            'sexo' => 'required'
+        ]);
+
+        if($validator->fails()) {
+
+            return redirect()->route('pessoa.edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $pessoa->fill($request->all())->save();
+        $letra = strtoupper(substr($pessoa->apelido, 0, 1));
+
+        return redirect()->route('agenda.letra', ['letra' => $letra]);
+    }
+
     public function delete($id)
     {
         $pessoa = Pessoa::find($id);

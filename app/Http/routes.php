@@ -42,6 +42,16 @@ $app->post('/contato', [
     'uses' => 'PessoaController@store'
 ]);
 
+$app->get('/contato/{id}/editar', [
+    'as' => 'pessoa.edit',
+    'uses' => 'PessoaController@edit'
+]);
+
+$app->put('/contato/{id}', [
+    'as' => 'pessoa.update',
+    'uses' => 'PessoaController@update'
+]);
+
 $app->get('/contato/{id}/apagar', [
     'as' => 'pessoa.delete',
     'uses' => 'PessoaController@delete'
