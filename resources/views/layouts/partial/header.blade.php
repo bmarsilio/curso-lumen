@@ -7,11 +7,11 @@
                 Agenda Telefônica
             </small>
             <span class="pull-right">
-                    <form class="form-inline" action="#" method="POST">
+                    <form class="form-inline" action="{{ route('agenda.busca') }}" method="POST">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Pesquisar Contato...">
+                            <input type="text" name="busca" class="form-control" placeholder="Pesquisar Contato...">
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
+                                <button class="btn btn-default" type="submit">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
@@ -25,7 +25,7 @@
 <div class="row">
     <div class="col-lg-12">
 
-        @foreach(range('A', 'Z') as $letra)
+        @foreach($letras as $letra)
 
             <a href="{{ route('agenda.letra', ['letra' => $letra]) }}" class="btn btn-primary btn-xs">
                 {{ $letra }}

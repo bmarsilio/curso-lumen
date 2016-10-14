@@ -4,7 +4,7 @@
 
     @forelse($pessoas as $pessoa)
         <div class="col-md-6">
-            @include('partial.contato')
+            @include('partials.contato')
         </div>
     @empty
         <div class="alert alert-info text-center">
