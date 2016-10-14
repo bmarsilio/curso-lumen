@@ -67,6 +67,13 @@ $app->singleton(
 //     'auth' => CodeAgenda\Http\Middleware\Authenticate::class,
 // ]);
 
+$app->middleware([
+    \Illuminate\Cookie\Middleware\EncryptCookies::class,
+    \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+    \Illuminate\Session\Middleware\StartSession::class,
+    \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
@@ -78,7 +85,7 @@ $app->singleton(
 |
 */
 
-// $app->register(CodeAgenda\Providers\AppServiceProvider::class);
+$app->register(CodeAgenda\Providers\AppServiceProvider::class);
 // $app->register(CodeAgenda\Providers\AuthServiceProvider::class);
 // $app->register(CodeAgenda\Providers\EventServiceProvider::class);
 

@@ -19,9 +19,14 @@ class Telefone extends Model
         'pessoa_id'
     ];
 
+    public function getNumeroAttribute()
+    {
+        return "$this->cod_pais ($this->ddd) $this->prefixo-$this->sufixo";
+    }
+
     public function pessoa()
     {
-        return $this->belongsTo('CodeAgenda\Models\Pessoa');
+        return $this->belongsTo(Pessoa::class, 'pessoa_id');
     }
 
 }
