@@ -9,7 +9,7 @@
         <td>{{ $telefone->descricao }}</td>
         <td>{{ $telefone->numero }}</td>
         <td>
-            <a href="#" class="text-danger" data-toggle="tooltip" data-placement="top" title="Apagar">
+            <a href="{{ route('telefone.delete', ['id' => $telefone->id]) }}" class="text-danger" data-toggle="tooltip" data-placement="top" title="Apagar">
                 <i class="fa fa-minus-circle"></i>
             </a>
         </td>

@@ -7,12 +7,12 @@
     <title>Code Agenda</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="css/app.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url('css/app.css') }}" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <script src="js/scripts.js"></script>
+    <script src="{{ url('js/scripts.js') }}"></script>
 </head>
 <body>
 
